@@ -40,7 +40,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.repository.indices" />
   </component>
-  <component name="RunManager" selected="TestNG.GetTest">
+  <component name="RunManager" selected="TestNG.GetTest.searchArtistId">
     <configuration name="GetTest" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="REST-Voda" />
       <extension name="coverage">
@@ -58,7 +58,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GetTest.addToPlaylist" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="GetTest.artistByID" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="REST-Voda" />
       <extension name="coverage">
         <pattern>
@@ -68,7 +68,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="cz.obergruber" />
       <option name="MAIN_CLASS_NAME" value="cz.obergruber.GetTest" />
-      <option name="METHOD_NAME" value="addToPlaylist" />
+      <option name="METHOD_NAME" value="artistByID" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -76,7 +76,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GetTest.correctToken" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="GetTest.artistID" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="REST-Voda" />
       <extension name="coverage">
         <pattern>
@@ -86,7 +86,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="cz.obergruber" />
       <option name="MAIN_CLASS_NAME" value="cz.obergruber.GetTest" />
-      <option name="METHOD_NAME" value="correctToken" />
+      <option name="METHOD_NAME" value="artistID" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -94,7 +94,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GetTest.createPlaylist" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="GetTest.searchArtist" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="REST-Voda" />
       <extension name="coverage">
         <pattern>
@@ -104,7 +104,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="cz.obergruber" />
       <option name="MAIN_CLASS_NAME" value="cz.obergruber.GetTest" />
-      <option name="METHOD_NAME" value="createPlaylist" />
+      <option name="METHOD_NAME" value="searchArtist" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -112,7 +112,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GetTest.removeFromPlaylist" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="GetTest.searchArtistId" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="REST-Voda" />
       <extension name="coverage">
         <pattern>
@@ -122,7 +122,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="cz.obergruber" />
       <option name="MAIN_CLASS_NAME" value="cz.obergruber.GetTest" />
-      <option name="METHOD_NAME" value="removeFromPlaylist" />
+      <option name="METHOD_NAME" value="searchArtistId" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -132,11 +132,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.GetTest.searchArtistId" />
         <item itemvalue="TestNG.GetTest" />
-        <item itemvalue="TestNG.GetTest.removeFromPlaylist" />
-        <item itemvalue="TestNG.GetTest.createPlaylist" />
-        <item itemvalue="TestNG.GetTest.addToPlaylist" />
-        <item itemvalue="TestNG.GetTest.correctToken" />
+        <item itemvalue="TestNG.GetTest.artistByID" />
+        <item itemvalue="TestNG.GetTest.searchArtist" />
+        <item itemvalue="TestNG.GetTest.artistID" />
       </list>
     </recent_temporary>
   </component>
