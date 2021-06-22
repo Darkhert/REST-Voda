@@ -5,15 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6e0e0715-5411-40d8-907c-b2466a084bfc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cz/obergruber/App.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cz/obergruber/GetTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/cz/obergruber/AppTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/obergruber/GetTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/obergruber/GetTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,29 +37,93 @@
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.repository.indices" />
   </component>
-  <component name="RunManager">
-    <configuration name="GetTest" type="TestNG" temporary="true">
+  <component name="RunManager" selected="TestNG.GetTest">
+    <configuration name="GetTest" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="REST-Voda" />
-      <shortenClasspath name="NONE" />
-      <useClassPathOnly />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="cz.obergruber.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="SUITE_NAME" value="" />
       <option name="PACKAGE_NAME" value="cz.obergruber" />
       <option name="MAIN_CLASS_NAME" value="cz.obergruber.GetTest" />
-      <option name="GROUP_NAME" value="" />
       <option name="TEST_OBJECT" value="CLASS" />
-      <option name="PARAMETERS" value="" />
-      <option name="OUTPUT_DIRECTORY" value="" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <option name="PROPERTIES_FILE" value="" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GetTest.addToPlaylist" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="REST-Voda" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cz.obergruber.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="cz.obergruber" />
+      <option name="MAIN_CLASS_NAME" value="cz.obergruber.GetTest" />
+      <option name="METHOD_NAME" value="addToPlaylist" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GetTest.correctToken" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="REST-Voda" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cz.obergruber.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="cz.obergruber" />
+      <option name="MAIN_CLASS_NAME" value="cz.obergruber.GetTest" />
+      <option name="METHOD_NAME" value="correctToken" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GetTest.createPlaylist" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="REST-Voda" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cz.obergruber.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="cz.obergruber" />
+      <option name="MAIN_CLASS_NAME" value="cz.obergruber.GetTest" />
+      <option name="METHOD_NAME" value="createPlaylist" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GetTest.removeFromPlaylist" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="REST-Voda" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cz.obergruber.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="cz.obergruber" />
+      <option name="MAIN_CLASS_NAME" value="cz.obergruber.GetTest" />
+      <option name="METHOD_NAME" value="removeFromPlaylist" />
+      <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
       <method v="2">
@@ -74,7 +133,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="TestNG.GetTest" />
-        <item itemvalue="TestNG.GetTest" />
+        <item itemvalue="TestNG.GetTest.removeFromPlaylist" />
+        <item itemvalue="TestNG.GetTest.createPlaylist" />
+        <item itemvalue="TestNG.GetTest.addToPlaylist" />
+        <item itemvalue="TestNG.GetTest.correctToken" />
       </list>
     </recent_temporary>
   </component>
@@ -102,6 +164,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
