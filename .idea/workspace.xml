@@ -5,7 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6e0e0715-5411-40d8-907c-b2466a084bfc" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cz/obergruber/RefreshToken.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cz/obergruber/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/cz/obergruber/GetTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/obergruber/GetTest.java" afterDir="false" />
@@ -14,6 +16,13 @@
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -38,9 +47,26 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/spotify-web-api-java-master" />
+    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.repository.indices" />
   </component>
-  <component name="RunManager" selected="TestNG.GetTest.searchArtistId">
+  <component name="RunManager" selected="TestNG.GetTest">
+    <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="cz.obergruber.App" />
+      <module name="REST-Voda" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cz.obergruber.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="GetTest" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="REST-Voda" />
       <extension name="coverage">
@@ -58,7 +84,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GetTest.artistByID" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="GetTest.correctToken" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="REST-Voda" />
       <extension name="coverage">
         <pattern>
@@ -68,7 +94,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="cz.obergruber" />
       <option name="MAIN_CLASS_NAME" value="cz.obergruber.GetTest" />
-      <option name="METHOD_NAME" value="artistByID" />
+      <option name="METHOD_NAME" value="correctToken" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -76,7 +102,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GetTest.artistID" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="GetTest.createPlaylist" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="REST-Voda" />
       <extension name="coverage">
         <pattern>
@@ -86,7 +112,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="cz.obergruber" />
       <option name="MAIN_CLASS_NAME" value="cz.obergruber.GetTest" />
-      <option name="METHOD_NAME" value="artistID" />
+      <option name="METHOD_NAME" value="createPlaylist" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -94,7 +120,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GetTest.searchArtist" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="GetTest.refreshToken" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="REST-Voda" />
       <extension name="coverage">
         <pattern>
@@ -104,25 +130,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="cz.obergruber" />
       <option name="MAIN_CLASS_NAME" value="cz.obergruber.GetTest" />
-      <option name="METHOD_NAME" value="searchArtist" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="GetTest.searchArtistId" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="REST-Voda" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="cz.obergruber.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="cz.obergruber" />
-      <option name="MAIN_CLASS_NAME" value="cz.obergruber.GetTest" />
-      <option name="METHOD_NAME" value="searchArtistId" />
+      <option name="METHOD_NAME" value="refreshToken" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -132,11 +140,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.GetTest.searchArtistId" />
         <item itemvalue="TestNG.GetTest" />
-        <item itemvalue="TestNG.GetTest.artistByID" />
-        <item itemvalue="TestNG.GetTest.searchArtist" />
-        <item itemvalue="TestNG.GetTest.artistID" />
+        <item itemvalue="TestNG.GetTest.createPlaylist" />
+        <item itemvalue="TestNG.GetTest.correctToken" />
+        <item itemvalue="TestNG.GetTest.refreshToken" />
+        <item itemvalue="Application.App" />
       </list>
     </recent_temporary>
   </component>
@@ -168,5 +176,12 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <configuration name="TestNG">
+        <watch expression="((RestAssuredResponseImpl)response).metaClass" custom="io.restassured.internal.RestAssuredResponseImpl" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>
