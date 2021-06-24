@@ -2,12 +2,14 @@ package cz.obergruber;
 
 import io.restassured.RestAssured;
 import io.restassured.parsing.Parser;
-import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.junit.jupiter.api.Assertions;
-import org.testng.annotations.*;
+import org.testng.annotations.AfterSuite;
+import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
 
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;
@@ -31,57 +33,87 @@ public class GetTest {
         RestAssured.baseURI = URL;
         RestAssured.defaultParser = Parser.JSON;
 
-        this.user = new User("Jirka");
+        this.user = new User();
     }
 
     @Test(groups = "auth", priority = 0)
     void noToken(){
         RestAssured.basePath = "v1/me";
-        given().when().get().then().statusCode(401).body("error.message", equalTo("No token provided"));
+
+        given().
+        when().get().
+        then().statusCode(401).body("error.message", equalTo("No token provided"));
+
     }
 
     @Test(groups = "auth", priority = 0)
     void invalidToken() {
         RestAssured.basePath = "v1/me";
+
         given().auth().oauth2(this.user.invalidToken).
-                when().get().then().statusCode(401).body("error.message", equalTo("Invalid access token"));
+        when().get().
+        then().statusCode(401).body("error.message", equalTo("Invalid access token"));
+
     }
 
     @Test(groups = "auth", priority = 0)
     void expiredToken() {
         RestAssured.basePath = "v1/me";
+
         given().auth().oauth2(this.user.expiredToken).
-                when().get().then().statusCode(401).body("error.message", equalTo("The access token expired"));
+        when().get().
+        then().statusCode(401).body("error.message", equalTo("The access token expired"));
+
     }
 
     @Test(groups = "auth", priority = 0)
     void correctToken() {
         RestAssured.basePath = "v1/me";
-        Response response = given().auth().oauth2(this.user.accessToken).
-                when().get().then().log().all().statusCode(200).body("display_name", equalTo("Jirka")).extract().response();
 
-        user.user_id = response.jsonPath().getString("id");
+        Response response =
+        given().auth().oauth2(this.user.accessToken).
+        when().get().
+        then().extract().response();
+
+        Assertions.assertEquals(200, response.statusCode());
+        Assertions.assertEquals(this.user.name, response.jsonPath().getString("display_name"));
+        Assertions.assertEquals(this.user.user_id, response.jsonPath().getString("id"));
     }
 
     @Test(groups = "user", priority = 1)
     void topArtist() {
         RestAssured.basePath = "v1/me/top/artists";
+
+        Response response =
         given().auth().oauth2(this.user.accessToken).
-                when().get().then().log().all().statusCode(200).body("items[0].name", equalTo("Linkin Park"));
+        when().get().
+        then().extract().response();
+
+        Assertions.assertEquals(200, response.statusCode());
+        Assertions.assertEquals("Linkin Park", response.jsonPath().getString("items[0].name"));
     }
 
     @Test(groups = "user", priority = 1)
     void topTrack() {
         RestAssured.basePath = "v1/me/top/tracks";
+
+        Response response =
         given().auth().oauth2(this.user.accessToken).queryParam("limit", 1).queryParam("offset", 0).
-                when().get().then().log().all().statusCode(200).body("items[0].name", equalTo("In the End"));
+        when().get().
+        then().extract().response();
+
+        Assertions.assertEquals(200, response.statusCode());
+        Assertions.assertEquals("In the End", response.jsonPath().getString("items[0].name"));
     }
 
     @Test(groups = "content", priority = 2, dataProvider = "artists")
     void searchArtistId(String artist, String id) {
         RestAssured.basePath = "v1/search";
-        Response response = given().auth().oauth2(this.user.accessToken).queryParam("q", artist).queryParam("type", "artist").
-                when().get().then().log().all().extract().response();
+
+        Response response =
+        given().auth().oauth2(this.user.accessToken).queryParam("q", artist).queryParam("type", "artist").
+        when().get().
+        then().extract().response();
 
         Assertions.assertEquals(200, response.statusCode());
         Assertions.assertEquals(artist, response.jsonPath().getString("artists.items[0].name"));
@@ -91,8 +123,14 @@ public class GetTest {
     @Test(groups = "content", priority = 2, dataProvider = "artists")
     void artistByID(String artist, String id) {
         RestAssured.basePath = String.format("v1/artists/%s", id);
+
+        Response response =
         given().auth().oauth2(this.user.accessToken).
-                when().get().then().log().all().statusCode(200).body("name", equalTo(artist));
+        when().get().
+        then().extract().response();
+
+        Assertions.assertEquals(200, response.statusCode());
+        Assertions.assertEquals(artist, response.jsonPath().getString("name"));
     }
 
     @Test(groups = "manipulation", priority = 1, dependsOnMethods = {"correctToken"})
@@ -108,8 +146,10 @@ public class GetTest {
         requestParams.put("description", description);
         requestParams.put("public", publicPlaylist);
 
-        Response response = given().auth().oauth2(this.user.accessToken).request().body(requestParams.toString()).
-                post(String.format("%s/%s", this.URL, endpoint)).then().log().all().extract().response();
+        Response response =
+        given().auth().oauth2(this.user.accessToken).request().body(requestParams.toString()).
+        when().post(String.format("%s/%s", this.URL, endpoint)).
+        then().extract().response();
 
         Assertions.assertEquals(201, response.statusCode());
         Assertions.assertEquals(name, response.jsonPath().getString("name"));
@@ -119,12 +159,14 @@ public class GetTest {
         this.user.playlist_id = response.jsonPath().getString("id");
     }
 
-    @Test(groups = "manipulation", priority = 1, dependsOnMethods = {"createPlaylist"})
+    @Test(groups = "manipulation", priority = 1, dependsOnMethods = {"correctToken", "createPlaylist"})
     void addToPlaylist() {
         String endpoint = String.format("v1/playlists/%s/tracks", this.user.playlist_id);
 
-        Response response = given().auth().oauth2(this.user.accessToken).request().queryParam("uris", String.join(",", this.user.songs)).
-                post(String.format("%s/%s", this.URL, endpoint)).then().log().all().extract().response();
+        Response response =
+        given().auth().oauth2(this.user.accessToken).request().queryParam("uris", String.join(",", this.user.songs)).
+        when().post(String.format("%s/%s", this.URL, endpoint)).
+        then().extract().response();
 
         Assertions.assertEquals(201, response.statusCode());
     }
@@ -142,24 +184,15 @@ public class GetTest {
         requestParams.put("description", description);
         requestParams.put("public", publicPlaylist);
 
-        Response response = given().auth().oauth2(this.user.accessToken).request().body(requestParams.toString()).
-                put(String.format("%s/%s", this.URL, endpoint)).then().extract().response();
-
-
-        String complete = response.asString();
-        JsonPath js = new JsonPath(complete);
-        System.out.println(js.get(name).toString());
-        System.out.println();
+        Response response =
+        given().auth().oauth2(this.user.accessToken).request().body(requestParams.toString()).
+        when().put(String.format("%s/%s", this.URL, endpoint)).
+        then().extract().response();
 
         Assertions.assertEquals(200, response.statusCode());
-        Assertions.assertEquals(name, response.jsonPath().getString("name"));
-        //Assertions.assertEquals(description, response.jsonPath().getString("description"));
-        //Assertions.assertEquals(publicPlaylist, response.jsonPath().getBoolean("public"));
-
-        //this.user.playlist_id = response.jsonPath().getString("id");
     }
 
-    @Test(groups = "manipulation", priority = 1, dependsOnMethods = {"addToPlaylist"})
+    @Test(groups = "manipulation", priority = 1, dependsOnMethods = {"correctToken", "createPlaylist", "addToPlaylist"})
     void removeFromPlaylist() {
         String endpoint = String.format("v1/playlists/%s/tracks", this.user.playlist_id);
 
@@ -170,18 +203,22 @@ public class GetTest {
                                 put("position", new JSONArray().put(0))))
                 .toString();
 
-        Response response = given().auth().oauth2(this.user.accessToken).request().body(jsonString).
-                delete(String.format("%s/%s", this.URL, endpoint)).then().log().all().extract().response();
+        Response response =
+        given().auth().oauth2(this.user.accessToken).request().body(jsonString).
+        when().delete(String.format("%s/%s", this.URL, endpoint)).
+        then().extract().response();
 
         Assertions.assertEquals(200, response.statusCode());
     }
 
-    @Test(groups = "manipulation", priority = 1, dependsOnMethods = {"removeFromPlaylist"})
+    @Test(groups = "manipulation", priority = 1, dependsOnMethods = {"correctToken", "createPlaylist"})
     void deletePlaylist() {
         String endpoint = String.format("v1/playlists/%s/followers", this.user.playlist_id);
 
-        Response response = given().auth().oauth2(this.user.accessToken).request().
-                delete(String.format("%s/%s", this.URL, endpoint)).then().log().all().extract().response();
+        Response response =
+        given().auth().oauth2(this.user.accessToken).request().
+        when().delete(String.format("%s/%s", this.URL, endpoint)).
+        then().extract().response();
 
         Assertions.assertEquals(200, response.statusCode());
     }
@@ -190,8 +227,10 @@ public class GetTest {
     void follow(String artist, String id) {
         String endpoint = "v1/me/following";
 
-        Response response = given().auth().oauth2(this.user.accessToken).request().queryParam("type", "artist").queryParam("ids", id).
-                put(String.format("%s/%s", this.URL, endpoint)).then().log().all().extract().response();
+        Response response =
+        given().auth().oauth2(this.user.accessToken).request().queryParam("type", "artist").queryParam("ids", id).
+        when().put(String.format("%s/%s", this.URL, endpoint)).
+        then().extract().response();
 
         Assertions.assertEquals(204, response.statusCode());
     }
@@ -200,8 +239,10 @@ public class GetTest {
     void unfollow(String artist, String id) {
         String endpoint = "v1/me/following";
 
-        Response response = given().auth().oauth2(this.user.accessToken).request().queryParam("type", "artist").queryParam("ids", id).
-                delete(String.format("%s/%s", this.URL, endpoint)).then().log().all().extract().response();
+        Response response =
+        given().auth().oauth2(this.user.accessToken).request().queryParam("type", "artist").queryParam("ids", id).
+        when().delete(String.format("%s/%s", this.URL, endpoint)).
+        then().extract().response();
 
         Assertions.assertEquals(204, response.statusCode());
     }

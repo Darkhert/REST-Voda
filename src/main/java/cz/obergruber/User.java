@@ -17,8 +17,8 @@ import java.net.URI;
 import static io.restassured.RestAssured.given;
 
 public class User {
-    public String name;
-    public String user_id;
+    public String name = "Jirka";
+    public String user_id = "q2szsk1ef8spfcnbwmr2qdjyr";
     public String playlist_id = "";
     public String[] songs = new String[] {"spotify:track:4iV5W9uYEdYUVa79Axb7Rh", "spotify:track:1301WleyT98MSxVHPZCA6M"};
 
@@ -27,8 +27,7 @@ public class User {
     public String expiredToken = "BQAhYuk2l9L8d5LYzQuTp0wz7TL29JDZvmsIFoNLbFPWfX4wZ0L4zAAP0YPj4S_RM1fsMdcOPVOlQxEdH-dLrOA-QKyzQl7gqcZ81WMKLIiJRfD6kKVRK1faT2njiFB37i9GlDKqUqVQufFZKE7USvaIon5YsNc0tlGFJqUqydZx5jOP-TSs_K1ehMjgG8e_TRb544-r3im1KLN77bcHY227p-cE86RosQA2xzHf_3yrf1OEh9fg6VqWldr27OqGdGKBZtCpdqAKlFTBosPn8RvIrA";
     public String invalidToken = "SK0TwsnCM04csZh02gprc9M4rWeGsBzb4EnWVJ9hciy9F9ADZ60CgpUQejnSZuhHc1LjIQO6Xnnav0rkWEjbJwulaH8g66VWEvFaXIr5MmLZxg1izKou38yJnLeqXWNbkZQM3zNcunFcEi4MDY9a9yiLqkMlHtOahrzvwinz3TONVXyfMsERosAH6BXC9wmXnypFxor6uykufLjhOO7YgXarvG9TvPGSmIp7XtwLHiWkghVU49x9NILlLbaE2nNoVIfbWGt5YZ1XHb3k42TZVV1AM2";
 
-    public User(String name) {
-        this.name = name;
+    public User() {
         accessToken = getAccessToken(refreshToken);
     }
 
