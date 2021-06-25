@@ -10,19 +10,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6e0e0715-5411-40d8-907c-b2466a084bfc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cz/obergruber/Account.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cz/obergruber/Auth.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cz/obergruber/Content.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cz/obergruber/Manipulation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/testng.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cz/obergruber/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/obergruber/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cz/obergruber/GetTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/obergruber/GetTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cz/obergruber/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/obergruber/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/obergruber/Auth.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/obergruber/Auth.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/obergruber/Manipulation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/obergruber/Manipulation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/testng.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/testng.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,7 +64,7 @@
       <recent name="cz" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.App">
+  <component name="RunManager" selected="TestNG.C:/Users/mober/IdeaProjects/REST-Voda/src/testng.xml">
     <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="cz.obergruber.App" />
       <module name="REST-Voda" />
@@ -157,8 +148,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.App" />
         <item itemvalue="TestNG.C:/Users/mober/IdeaProjects/REST-Voda/src/testng.xml" />
+        <item itemvalue="Application.App" />
         <item itemvalue="TestNG.Manipulation" />
         <item itemvalue="TestNG.Auth" />
         <item itemvalue="TestNG.Content" />
@@ -195,15 +186,6 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/cz/obergruber/Manipulation.java</url>
-          <line>17</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <watches-manager>
       <configuration name="TestNG">
         <watch expression="((RestAssuredResponseImpl)response).metaClass" custom="io.restassured.internal.RestAssuredResponseImpl" />

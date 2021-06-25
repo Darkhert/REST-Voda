@@ -94,7 +94,7 @@ public class Manipulation extends GetTest {
         Response response =
         given().auth().oauth2(super.account.accessToken).request().
         when().delete(String.format("%s/%s", super.URL, endpoint)).
-        then().log().all().extract().response();
+        then().extract().response();
 
         Assertions.assertEquals(200, response.statusCode());
     }

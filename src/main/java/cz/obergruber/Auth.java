@@ -45,9 +45,9 @@ public class Auth extends GetTest {
         RestAssured.basePath = "v1/me";
 
         Response response =
-                given().auth().oauth2(super.account.accessToken).
-                        when().get().
-                        then().extract().response();
+        given().auth().oauth2(super.account.accessToken).
+        when().get().
+        then().extract().response();
 
         Assertions.assertEquals(200, response.statusCode());
         Assertions.assertEquals(super.account.name, response.jsonPath().getString("display_name"));
