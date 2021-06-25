@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Practice Suite">
+    <test name="Test Basics 1">
+        <classes>
+            <class name="cz.obergruber.Auth"/>
+            <class name="cz.obergruber.User"/>
+            <class name="cz.obergruber.Manipulation"/>
+            <class name="cz.obergruber.Content"/>
+        </classes>
+    </test> <!-- Test -->
+</suite> <!-- Suite -->

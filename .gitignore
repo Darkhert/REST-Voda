@@ -26,3 +26,5 @@ hs_err_pid*
 out/*
 test-output/*
 
+# Misc
+goals.txt

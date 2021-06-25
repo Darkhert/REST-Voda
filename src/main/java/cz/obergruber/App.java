@@ -9,7 +9,7 @@ public class App
     {
         TestListenerAdapter tla = new TestListenerAdapter();
         TestNG testng = new TestNG();
-        testng.setTestClasses(new Class[] { GetTest.class });
+        testng.setTestClasses(new Class[] { Auth.class, User.class, Content.class, Manipulation.class });
         testng.addListener(tla);
         testng.run();
     }
