@@ -6,23 +6,33 @@ import org.testng.ITestNGListener;
 import org.testng.TestListenerAdapter;
 import org.testng.TestNG;
 import org.testng.collections.Lists;
+import org.apache.commons.io.FilenameUtils;
 
 import java.io.File;
 import java.net.URI;
 import java.net.URISyntaxException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
-import java.util.Set;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) throws URISyntaxException {
 
-        Reflections reflections = new Reflections("samples", new ResourcesScanner());
+        Reflections reflections = new Reflections("cz.obergruber", new ResourcesScanner());
         Set<String> resourceList = reflections.getResources(x -> true);
 
-        for(String r : resourceList) {
-            System.out.println(r);
+        List<String> classes = new ArrayList<String>();
+        List<String> exclude = new ArrayList<String>() {
+            {
+                add("gettest");
+                add("main");
+                add("main$1");
+                add("account");
+            }
+        };
+        for (String r : resourceList) {
+            String c = FilenameUtils.removeExtension(r.split("/")[2]);
+            if (!exclude.contains(c.toLowerCase())) {
+                classes.add(c);
+            }
         }
 
         System.out.println();
