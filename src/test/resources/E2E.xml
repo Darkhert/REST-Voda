@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="E2E" verbose="2" thread-count="4" parallel="methods">
+    <test name="E2E">
+        <groups>
+            <run>
+                <include name="auth"/>
+                <include name="content"/>
+                <include name="manipulation"/>
+                <include name="user"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="cz.obergruber.Auth"/>
+            <class name="cz.obergruber.Content"/>
+            <class name="cz.obergruber.Manipulation"/>
+            <class name="cz.obergruber.User"/>
+        </classes>
+    </test>
+</suite>

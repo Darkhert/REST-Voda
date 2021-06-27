@@ -25,6 +25,7 @@ hs_err_pid*
 # Artifacts
 out/*
 test-output/*
+target/*
 
 # Misc
 goals.txt

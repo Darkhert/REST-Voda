@@ -10,5 +10,8 @@
         <module name="Test" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="testng-maven" target="11" />
+    </bytecodeTargetLevel>
   </component>
 </project>
