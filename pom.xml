@@ -4,8 +4,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.test.classes</groupId>
-    <artifactId>testng-maven</artifactId>
+    <groupId>cz.obergruber</groupId>
+    <artifactId>Test</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>
@@ -65,7 +65,6 @@
             <version>1.7.31</version>
         </dependency>
 
-        <!-- https://mvnrepository.com/artifact/org.reflections/reflections -->
         <dependency>
             <groupId>org.reflections</groupId>
             <artifactId>reflections</artifactId>
@@ -77,6 +76,17 @@
 
     <build>
         <plugins>
+            <plugin>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>2.3.1</version>
+                <executions>
+                    <execution>
+                        <id>default-jar</id>
+                        <phase>none</phase>
+                    </execution>
+                </executions>
+            </plugin>
+
             <plugin>
                 <artifactId>maven-assembly-plugin</artifactId>
                 <version>3.3.0</version>
@@ -94,7 +104,7 @@
                             </descriptors>
                             <archive>
                                 <manifest>
-                                    <mainClass>samples.Main</mainClass>
+                                    <mainClass>cz.obergruber.Main</mainClass>
                                 </manifest>
                             </archive>
                         </configuration>

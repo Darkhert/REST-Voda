@@ -12,6 +12,7 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.Set;
 
 public class Main {
@@ -29,7 +30,7 @@ public class Main {
         TestListenerAdapter tla = new TestListenerAdapter();
         TestNG testng = new TestNG();
         List<String> suites = Lists.newArrayList();
-        URI resource = Main.class.getClassLoader().getResource("E2E.xml").toURI();
+        URI resource = Objects.requireNonNull(Main.class.getClassLoader().getResource("E2E.xml")).toURI();
         setTestSuites(testng, resource);
         testng.setTestSuites(suites);
         testng.addListener((ITestNGListener) tla);
