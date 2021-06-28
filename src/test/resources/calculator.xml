@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Calculator" verbose="2" thread-count="4" parallel="methods">
+    <test name="Calculator">
+        <groups>
+            <run>
+                <include name="calculator"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="cz.obergruber.Calculator"/>
+        </classes>
+    </test>
+</suite>

@@ -40,7 +40,7 @@ public class Main {
         TestListenerAdapter tla = new TestListenerAdapter();
         TestNG testng = new TestNG();
         List<String> suites = Lists.newArrayList();
-        URI resource = Objects.requireNonNull(Main.class.getClassLoader().getResource("E2E.xml")).toURI();
+        URI resource = Objects.requireNonNull(Main.class.getClassLoader().getResource("spotify.xml")).toURI();
         setTestSuites(testng, resource);
         testng.setTestSuites(suites);
         testng.addListener((ITestNGListener) tla);
