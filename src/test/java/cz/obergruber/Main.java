@@ -48,10 +48,8 @@ public class Main {
 
         TestListenerAdapter tla = new TestListenerAdapter();
         TestNG testng = new TestNG();
-        List<String> suites = Lists.newArrayList();
         URI resource = Objects.requireNonNull(Main.class.getClassLoader().getResource(String.format("%s.xml", xml))).toURI();
         setTestSuites(testng, resource);
-        testng.setTestSuites(suites);
         testng.addListener((ITestNGListener) tla);
         testng.run();
     }
