@@ -44,6 +44,9 @@ public class Main {
         } else if (args.length > 1) {
             System.out.println("Too much parameters. You can run either E2E (without param), or select one group (defined in param).");
             System.exit(0);
+        } else {
+            System.out.println("Incorrect parameter");
+            System.exit(0);
         }
 
         TestListenerAdapter tla = new TestListenerAdapter();
