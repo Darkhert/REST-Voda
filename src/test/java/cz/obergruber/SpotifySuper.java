@@ -6,8 +6,8 @@ import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.DataProvider;
 
-public class GetTest {
-    public GetTest() {
+public class SpotifySuper {
+    public SpotifySuper() {
 
     }
 

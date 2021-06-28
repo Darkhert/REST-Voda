@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 
 import static io.restassured.RestAssured.given;
 
-public class Manipulation extends GetTest {
+public class Manipulation extends SpotifySuper {
     public Manipulation() {
         super.setUp();
     }

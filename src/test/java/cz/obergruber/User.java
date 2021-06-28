@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 
 import static io.restassured.RestAssured.given;
 
-public class User extends GetTest {
+public class User extends SpotifySuper {
     public User() {
         super.setUp();
     }

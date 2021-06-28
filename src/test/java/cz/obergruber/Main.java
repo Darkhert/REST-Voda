@@ -19,28 +19,37 @@ public class Main {
         Reflections reflections = new Reflections("cz.obergruber", new ResourcesScanner());
         Set<String> resourceList = reflections.getResources(x -> true);
 
-        List<String> classes = new ArrayList<String>();
-        List<String> exclude = new ArrayList<String>() {
+        List<String> exclude = new ArrayList<>() {
             {
-                add("gettest");
-                add("main");
-                add("main$1");
-                add("account");
+                add("SpotifySuper");
+                add("Main");
+                add("Main$1");
+                add("Account");
             }
         };
+
+        List<String> include = new ArrayList<>();
         for (String r : resourceList) {
-            String c = FilenameUtils.removeExtension(r.split("/")[2]);
-            if (!exclude.contains(c.toLowerCase())) {
-                classes.add(c);
+            String cls = FilenameUtils.removeExtension(r.split("/")[2]);
+            if (!exclude.contains(cls)) {
+                include.add(cls.toLowerCase());
             }
         }
 
-        System.out.println();
+        String xml = "";
+        if (args.length == 0) {
+            xml = "spotify";
+        } else if (args.length == 1 && include.contains(args[0].toLowerCase())) {
+            xml = args[0].toLowerCase();
+        } else if (args.length > 1) {
+            System.out.println("Too much parameters. You can run either E2E (without param), or select one group (defined in param).");
+            System.exit(0);
+        }
 
         TestListenerAdapter tla = new TestListenerAdapter();
         TestNG testng = new TestNG();
         List<String> suites = Lists.newArrayList();
-        URI resource = Objects.requireNonNull(Main.class.getClassLoader().getResource("spotify.xml")).toURI();
+        URI resource = Objects.requireNonNull(Main.class.getClassLoader().getResource(String.format("%s.xml", xml))).toURI();
         setTestSuites(testng, resource);
         testng.setTestSuites(suites);
         testng.addListener((ITestNGListener) tla);
